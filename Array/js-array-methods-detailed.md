@@ -12,6 +12,23 @@
 const nums = [1, 2, 3];
 const squares = nums.map(n => n * n); // [1, 4, 9]
 ```
+**Explanation:**
+
+- Creates a new array by applying the function to each element.
+- Does NOT modify the original array.
+- Each callback gets:
+  - element: current item in the array
+  - index: position of the item
+  - array: the original array
+  
+**Notes 📝:**
+
+-   If your callback doesn’t return a value, the result will be undefined
+  ```js
+[1, 2, 3].map(n => {}); // [undefined, undefined, undefined]
+```
+  
+
 
 ### `forEach()`
 **Syntax:** `array.forEach((element, index, array) => { ... })`  
