@@ -49,7 +49,7 @@ const squares = nums.map(n => n * n); // [1, 4, 9]
 - It does not return a value.
 - It is used for side-effects only (e.g., logging, updating variables). 
 - Cannot be chained
-- **Important Notes 📝:**    
+**Important Notes 📝:**    
  - You can’t use break, continue, or return to exit early from a forEach() loop (unlike for, while)     
  - Chainable:A method is chainable if it returns a value (usually a new array or object), so that you can call another method directly after it.    
 
