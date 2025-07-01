@@ -68,9 +68,25 @@ const squares = nums.map(n => n * n); // [1, 4, 9]
 **Syntax:** `array.filter((element, index, array) => condition)`  
 **Example:**
 ```js
-const evens = [1, 2, 3, 4].filter(n => n % 2 === 0); // [2, 4]
-```
+const evens = [1, 2, 3, 4].filter(n => n % 2 === 0); // [2, 4]  
+```  
+**🧠 Parameters:**      
+| Parameter | Description                                        |
+| --------- | -------------------------------------------------- |
+| `element` | The current item in the array                      |
+| `index`   | (Optional) The index of the current item           |
+| `array`   | (Optional) The array that `filter()` was called on |
 
+**Explanation:**  
+- filter() returns a new array with only the elements that satisfy the given condition. 
+- It does not modify the original array.
+
+**Important Notes 📝:**    
+ - **✅ Chainable:** Yes
+ - **❌ Modifies Original Array:** No
+ - **⚠️ Note:** If no elements pass the condition, it returns an empty array.
+
+  
 ### `reduce()`
 **Syntax:** `array.reduce((accumulator, currentValue, index, array) => newAccumulator, initialValue)`  
 **Example:**
