@@ -36,6 +36,12 @@ const squares = nums.map(n => n * n); // [1, 4, 9]
 ```js
 [1, 2, 3].forEach(n => console.log(n));
 ```
+| Parameter | Description                                         |
+| --------- | --------------------------------------------------- |
+| `element` | The current item in the array                       |
+| `index`   | (Optional) The index of the current item            |
+| `array`   | (Optional) The array that `forEach()` was called on |
+
 
 ### `filter()`
 **Syntax:** `array.filter((element, index, array) => condition)`  
