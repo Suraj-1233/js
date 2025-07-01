@@ -138,6 +138,11 @@ date.getDate();           // 1–31
 date.toISOString();       // 2025-06-30T...
 date.toLocaleDateString(); // Localized string
 
+
+
+
+
+
 ### 🔷 10. Utility Functions
 
 
