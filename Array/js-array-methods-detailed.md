@@ -123,6 +123,23 @@ const nums = [1, 2];
 const result = nums.flatMap(n => [n, n * 2]); // [1, 2, 2, 4]
 ```
 
+**🧠 Parameters:**    
+| Parameter | Description                                             |
+| --------- | ------------------------------------------------------- |
+| `element` | The current item in the array                           |
+| `index`   | (Optional) The index of the current item                |
+| `array`   | (Optional) The original array `flatMap()` was called on |
+
+**Explanation:**  
+- flatMap() first maps each element using the callback. 
+- Then it flattens the result by one level.
+- It’s like doing .map(...).flat(1) but more efficient.
+
+**Important Notes 📝:**    
+ - **✅ Chainable:** Yes
+ - **❌ Modifies Original Array:** No
+ - **⚠️ Note:** Only flattens one level deep. For deeper flattening, use .map(...).flat(depth).
+
 ---
 
 ## 🔍 Searching
