@@ -138,6 +138,12 @@ arr.splice(1, 1, 4); // [1, 4, 3]
 ```js
 [3, 1, 2].sort((a, b) => a - b); // [1, 2, 3]
 ```
+**Explanation:**
+
+- `a - b > 0`: `b` comes before `a` (swap them)
+- `a - b < 0`: `a` comes before `b`
+- `a - b === 0`: keep original order
+
 
 ### `reverse()`
 **Syntax:** `array.reverse()`  
