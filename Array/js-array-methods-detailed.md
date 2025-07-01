@@ -144,7 +144,7 @@ arr.splice(1, 1, 4); // [1, 4, 3]
 - `a - b < 0`: `a` comes before `b`
 - `a - b === 0`: keep original order
   
-> 📝**Notes :**
+**Notes 📝:**
 
 -  This method changes the original array
   
