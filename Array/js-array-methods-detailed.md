@@ -94,6 +94,27 @@ const evens = [1, 2, 3, 4].filter(n => n % 2 === 0); // [2, 4]
 const sum = [1, 2, 3].reduce((acc, val) => acc + val, 0); // 6
 ```
 
+**🧠 Parameters:**    
+| Parameter      | Description                                                               |
+| -------------- | ------------------------------------------------------------------------- |
+| `accumulator`  | The result of the previous callback execution or the `initialValue`       |
+| `currentValue` | The current element being processed                                       |
+| `index`        | (Optional) The index of the current element                               |
+| `array`        | (Optional) The original array `reduce()` was called on                    |
+| `initialValue` | The initial value to use as the first argument to the first callback call |
+
+**Explanation:**  
+- reduce() executes the callback for each element in the array and accumulates a single return value. 
+- It does not modify the original array.
+- It's ideal for operations like summing, multiplying, flattening, grouping, etc.
+
+**Important Notes 📝:**    
+ - **✅ Chainable:** Yes
+ - **❌ Modifies Original Array:** No
+ - **⚠️ Note:** initialValue is strongly recommended — without it, the first element is used as the starting accumulator and skipped in the callback.
+
+
+
 ### `flatMap()`
 **Syntax:** `array.flatMap((element, index, array) => newArray)`  
 **Example:**
