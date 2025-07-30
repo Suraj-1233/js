@@ -13,10 +13,10 @@ function capitalizeWords(str) {
 
 console.log(capitalizeWords(" hello world")); // "Hello World"
 ```
+---
 
 
-
-```
+```javascript
 function capitalizeWords(str) {
   return str
     .trim()
@@ -26,6 +26,21 @@ function capitalizeWords(str) {
 }
 
 console.log(capitalizeWords(" hello.       world")); // "Hello. World"
+```
+
+---
+```javascript
+function capitalizeWords(str) {
+  return str
+    .trim()
+    .split(/\s+/) // split on one or more spaces
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+}
+
+console.log(capitalizeWords("hellO       world")); 
+// "Hello World"
+
 ```
 ---
 
