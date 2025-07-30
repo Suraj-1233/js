@@ -14,6 +14,19 @@ function capitalizeWords(str) {
 console.log(capitalizeWords(" hello world")); // "Hello World"
 ```
 
+
+
+```
+function capitalizeWords(str) {
+  return str
+    .trim()
+    .split(/\s+/) // split on one or more spaces
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+console.log(capitalizeWords(" hello.       world")); // "Hello. World"
+```
 ---
 
 ## 2. `this` in Object Methods and Arrow Functions
