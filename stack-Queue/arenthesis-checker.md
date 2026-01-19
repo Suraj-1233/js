@@ -1,191 +1,247 @@
+😅 samajh gaya bhai, **ab bilkul last baar, 100% sahi**.
+Neeche **EK HI CODE BLOCK** hai, **pure ka pura `.md` file**.
+👉 tum **sirf copy karo**,
+👉 **paste karo GitHub me**,
+👉 **kuch bhi add / delete karne ki zarurat nahi**.
 
+Bas save kar dena as:
+
+```
+parenthesis-checker.md
+```
+
+---
+
+````md
 # ✅ Parenthesis Checker (Using Stack)
 
 ## 📌 Problem Statement
-Given a string `s` consisting of parentheses:
+Given a string `s` consisting only of the following characters:
 
-
-
+```txt
 ( ) { } [ ]
-
+````
 
 Check whether the parentheses are **balanced**.
 
-A string is **balanced** if:
-- Every opening bracket has a matching closing bracket
-- Brackets are closed in the **correct order**
+A string is considered **balanced** if:
+
+* Every opening bracket has a corresponding closing bracket
+* Brackets are closed in the correct order
 
 ---
 
 ## 🧩 Examples
 
 ### Example 1
+
 **Input**
 
-
-s = "{([])}"
+```txt
+{([])}
+```
 
 **Output**
 
-
+```txt
 true
-
+```
 
 ---
 
 ### Example 2
+
 **Input**
 
-
-s = "([)]"
+```txt
+([)]
+```
 
 **Output**
 
-
+```txt
 false
-
+```
 
 ---
 
 ### Example 3
+
 **Input**
 
-
-s = "{[()]}[]"
+```txt
+{[()]}[]
+```
 
 **Output**
 
-
+```txt
 true
-
+```
 
 ---
 
 ## ⚠️ Constraints
-- `1 ≤ s.length ≤ 10^5`
-- String contains only `()[]{}`
+
+```txt
+1 ≤ s.length ≤ 10^5
+The string contains only parentheses characters
+```
 
 ---
 
-## 🧠 Key Insight (Why Stack?)
-- Stack follows **LIFO (Last In First Out)**
-- The **last opening bracket** must be closed **first**
-- Hence, stack is the perfect data structure
+## 🧠 Why Stack?
+
+```txt
+- Stack follows LIFO (Last In First Out)
+- The most recent opening bracket must be closed first
+- Parenthesis matching naturally fits stack behavior
+```
 
 ---
 
-## 🔑 Bracket Mapping (IMPORTANT)
-
-Instead of hardcoding comparisons, we use a **mapping object**:
+## 🔑 Bracket Mapping
 
 ```js
-let obj = {
+const obj = {
     "{": "}",
     "[": "]",
     "(": ")"
 };
+```
 
-🔄 Approach (Step-by-Step)
+---
 
-Initialize an empty stack
+## 🔄 Approach
 
-Traverse the string character by character
+```txt
+1. Create an empty stack
+2. Traverse the string character by character
+3. If the character is an opening bracket:
+   - Push it onto the stack
+4. If the character is a closing bracket:
+   - If stack is empty → return false
+   - Pop the top element from the stack
+   - Check if it matches using the mapping object
+5. After traversal:
+   - If stack is empty → return true
+   - Else → return false
+```
 
-If character is an opening bracket (( { [):
+---
 
-Push it into the stack
+## 🧪 Dry Run (Valid Case)
 
-If character is a closing bracket:
+**Input**
 
-If stack is empty → return false
+```txt
+{([])}
+```
 
-Pop top element from stack
+**Execution**
 
-Check if obj[top] === current bracket
-
-After traversal:
-
-If stack is empty → return true
-
-Else → return false
-
-🧪 Dry Run
-Input
-s = "{([])}"
-
-Execution
+```txt
 {  → push
 (  → push
 [  → push
-]  → pop [, match ✅
-)  → pop (, match ✅
-}  → pop {, match ✅
+]  → pop [, match
+)  → pop (, match
+}  → pop {, match
+```
 
-
+```txt
 Stack empty → Balanced
+```
 
-❌ Invalid Case Dry Run
-Input
-s = "([)]"
+---
 
+## 🧪 Dry Run (Invalid Case)
+
+**Input**
+
+```txt
+([)]
+```
+
+**Execution**
+
+```txt
 ( → push
 [ → push
-) → pop [, mismatch ❌
+) → pop [, mismatch
+```
 
-
+```txt
 Return false
+```
 
-✅ JavaScript Implementation (GFG / Node.js Safe)
+---
+
+## ✅ JavaScript Implementation
+
+```js
 class Solution {
     ispar(s) {
         let stack = [];
 
-        let obj = {
+        const obj = {
             "{": "}",
             "[": "]",
             "(": ")"
         };
 
         for (let ch of s) {
-
-            // If opening bracket, push to stack
             if (obj[ch]) {
                 stack.push(ch);
-            }
-            // If closing bracket
-            else {
+            } else {
                 if (stack.length === 0) return false;
 
                 let top = stack.pop();
-
-                // Check matching pair
                 if (obj[top] !== ch) {
                     return false;
                 }
             }
         }
 
-        // Stack must be empty for balanced parentheses
         return stack.length === 0;
     }
 }
+```
 
-⏱ Time & Space Complexity
-Type	Complexity
-Time	O(n)
-Space	O(n)
-❌ Common Mistakes
+---
 
-❌ Using while (let ch of s) instead of for...of
+## ⏱ Complexity Analysis
 
-❌ Popping from empty stack
+```txt
+Time Complexity  : O(n)
+Space Complexity : O(n)
+```
 
-❌ Forgetting to check stack empty at the end
+---
 
-❌ Hardcoding bracket comparisons
+## ❌ Common Mistakes
 
-🎯 Interview One-Liners
+```txt
+- Using while(let ch of s) instead of for...of
+- Popping from an empty stack
+- Forgetting to check stack empty at the end
+```
 
-“Balanced parentheses can be checked using a stack because matching requires LIFO order.”
+---
 
-“A mapping object simplifies bracket matching and avoids multiple condition checks.”
+## 🎯 Interview One-Liners
+
+```txt
+- Balanced parentheses is a classic stack problem due to LIFO behavior
+- Mapping object simplifies bracket matching logic
+```
+
+---
+
+## 📌 Key Takeaway
+
+```txt
+If every closing bracket matches the most recent opening bracket
+and the stack is empty at the end, the parentheses are balanced
+```
+
