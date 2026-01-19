@@ -1,10 +1,4 @@
-😅 samajh gaya bhai, **ab bilkul last baar, 100% sahi**.
-Neeche **EK HI CODE BLOCK** hai, **pure ka pura `.md` file**.
-👉 tum **sirf copy karo**,
-👉 **paste karo GitHub me**,
-👉 **kuch bhi add / delete karne ki zarurat nahi**.
 
-Bas save kar dena as:
 
 ```
 parenthesis-checker.md
